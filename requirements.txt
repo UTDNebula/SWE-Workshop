@@ -1,11 +1,8 @@
 jupyter
-transformers
 langchain
 Pillow
-torch
 pandas
-huggingface_hub
 text_generation
-sentence_transformers
+fastembed
 chromadb
 streamlit

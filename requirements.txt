@@ -6,3 +6,4 @@ text_generation
 fastembed
 chromadb
 streamlit
+black

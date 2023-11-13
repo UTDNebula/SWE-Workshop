@@ -21,5 +21,6 @@ def format_as_doc(row):
     """Format a row of the dataset as a document, combining multiple data fields into a single page"""
     return f"Title: {row['title']}\nCategories: {', '.join(row['categories'])}\nDescription: {row['description']}\n"
 
+
 def decode_image(encoded_image):
     return Image.open(BytesIO(b64decode(encoded_image)))

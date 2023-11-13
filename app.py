@@ -1,16 +1,15 @@
 import base64
-from utils import format_as_doc, format_docs, llm
 import pandas as pd
 import streamlit as st
 
-from langchain.embeddings import HuggingFaceEmbeddings
-
+from langchain.embeddings.fastembed import FastEmbedEmbeddings
 from langchain.vectorstores import Chroma
-
 from langchain.document_loaders import DataFrameLoader
 from langchain.schema.runnable import RunnablePassthrough
 from langchain.schema import StrOutputParser
 from langchain.prompts import PromptTemplate
+
+from utils import format_as_doc, format_docs, llm
 
 
 # Load the dataset from the data folder
@@ -25,7 +24,7 @@ def load_data(url="https://storage.googleapis.com/swe-workshop-23/organizations.
 def vectorize_data(df):
     loader = DataFrameLoader(df[["title", "content"]], page_content_column="content")
     documents = loader.load()
-    embeddings = HuggingFaceEmbeddings()
+    embeddings = FastEmbedEmbeddings()
     docsearch = Chroma.from_documents(documents, embeddings)
     return docsearch
 

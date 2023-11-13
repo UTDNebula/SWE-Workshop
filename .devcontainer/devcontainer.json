@@ -1,11 +1,9 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10-bookworm",
   "hostRequirements": {
     "cpus": 4
   },
-  "waitFor": "onCreateCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": ["Organization Recommendation.ipynb", "app.py"]

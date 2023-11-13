@@ -1,0 +1,11 @@
+jupyter
+transformers
+langchain
+Pillow
+torch
+pandas
+huggingface_hub
+text_generation
+sentence_transformers
+chromadb
+streamlit
